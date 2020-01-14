@@ -32,11 +32,6 @@ HEADERS += \
     messagedisplay.h \
     message_levels.h
 
-#unix {
-#    target.path = /usr/lib
-#    INSTALLS += target
-#}
-
 FORMS += \
     messagedisplay.ui
 
@@ -44,6 +39,23 @@ FORMS += \
 # INSTALL
 #########
 
+######
+######
+## WIN
+win32{
+target.path = ../../lib/bin
+header.path = ../../lib/include/common_ple/message_ple
+header.files = \
+    messagedisplay.h \
+    message_levels.h \
+    message_ple_global.h
+INSTALLS += target header
+}
+
+#######
+#######
+## UNIX
+unix{
 target.path = $$[QT_INSTALL_LIBS]
 isEmpty(target.path) {
     error(can\'t get QT_INSTALL_LIBS)
@@ -55,3 +67,4 @@ header.files = \
     message_levels.h
 
 INSTALLS += header target
+}

@@ -3,13 +3,15 @@
 
 #include <QWidget>
 
+#include "message_ple_global.h"
+
 #include "message_levels.h"
 
 namespace Ui {
 class MessageDisplay;
 }
 
-class MessageDisplay : public QWidget
+class MESSAGE_PLESHARED_EXPORT MessageDisplay : public QWidget
 {
     Q_OBJECT
 
